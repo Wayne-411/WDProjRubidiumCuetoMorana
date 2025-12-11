@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Beginner's Guide | CR Evolutions Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --cr-blue-dark: #232a4e;
+            --cr-gold: #FFE66D;
+            --cr-red: #8d1d2a;
+            --text-light: #ffffff;
+            --cr-dark-bg: #1a1e34;
+            --cr-bright-blue: #323d6a;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--cr-dark-bg);
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+
+        .page-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.discordapp.com/attachments/1407934911133777952/1448305000152563804/image.png') no-repeat center center;
+            background-size: cover;
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .navbar {
+            background-color: var(--cr-blue-dark);
+            border-bottom: 5px solid var(--cr-gold);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-logo {
+            font-size: 30px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+        }
+
+        .nav-logo span {
+            color: var(--cr-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            text-transform: uppercase;
+            margin-right: auto;
+            margin-left: 50px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 700;
+            font-size: 18px;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--cr-gold);
+            border-bottom: 2px solid var(--cr-gold);
+        }
+
+        .navbar-icon {
+            max-width: 120px;
+            height: auto;
+            position: relative;
+            top: -10px;
+        }
+
+        .content-wrapper {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 20px 20px 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .guide-container {
+            max-width: 1000px;
+            width: 100%;
+            background-color: rgba(35, 42, 78, 0.9);
+            border-radius: 10px;
+            border: 8px solid var(--cr-bright-blue);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+            padding: 60px 40px 60px 40px;
+        }
+
+        .guide-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 45px;
+            font-weight: 900;
+            color: var(--cr-gold);
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--cr-gold);
+            display: inline-block;
+        }
+
+        .guide-subheading {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--cr-red);
+            margin-bottom: 40px;
+        }
+
+        .guide-section {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .guide-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--text-light);
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--cr-bright-blue);
+            padding-bottom: 5px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .guide-section p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .key-strategies-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .key-strategies-list li {
+            background-color: var(--cr-blue-dark);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 5px solid var(--cr-gold);
+            font-size: 17px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-background"></div>
+
+    <nav class="navbar">
+        <div class="nav-logo">CLASH ROYALE <span>EVOS GUIDE</span></div>
+        <div class="nav-links">
+            <a href="MainHub.html">HOME</a>
+            <a href="MeetTheEvos.html">EVO CARDS</a>
+            <a href="guide.html" class="active">GUIDE</a>
+            <a href="https://clashroyale.com/" target="_blank">OFFICIAL WEB</a>
+            <a href="references.html">REFERENCES</a>
+        </div>
+        <img src="https://cdn.discordapp.com/attachments/1407934911133777952/1448311458021507144/bPIB8S2gAAAABJRU5ErkJggg.png"
+            alt="CR Skeleton Icon" class="navbar-icon">
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="guide-container">
+            <h2 class="guide-heading">The Basics of CLASH</h2>
+            <p class="guide-subheading">How to Play Clash Royale</p>
+
+            <div class="guide-section">
+                <h3>Gameplay Overview</h3>
+                <p>To play Clash Royale, you build a deck of 8 cards (troops, spells, defenses) and battle 1v1 in
+                    real-time. You use Elixir to deploy cards onto the map to attack the enemy's towers while defending
+                    your own. The primary goal is to destroy the enemy's King Tower. The match lasts 3 minutes, and the
+                    winner is the player who gets more crowns (destroying more towers) than their opponent within that
+                    time. Winning earns you trophies, allowing you to climb arenas.</p>
+            </div>
+
+            <div class="guide-section">
+                <h3>Key Strategies</h3>
+                <ul class="key-strategies-list">
+                    <li>**Elixir Management:** Always try to use your Elixir efficiently and avoid being at 10 Elixir
+                        doing nothing. Conversely, try to force your opponent to overspend their Elixir.</li>
+                    <li>**Card Synergy:** Understand how your cards work together (e.g., placing a tank like a Giant in
+                        front of a damage-dealer like a Wizard).</li>
+                    <li>**Strategic Placement:** Deploy cards carefully. Avoid clumping troops together, as they will be
+                        easily destroyed by area-of-effect spells like Fireball or Valkyrie.</li>
+                    <li>**Baiting and Countering:** Use cheap or less important cards to 'bait out' the opponent's
+                        strong counters, then deploy your main push after their counter card is cycling.</li>
+                    <li>**Effective Pushes:** Focus on building counter-pushes where you defend with minimum Elixir, and
+                        the surviving troops then turn into your attack force.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
