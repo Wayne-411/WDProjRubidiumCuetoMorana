@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Meet the Evos | CR Evolutions Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --cr-blue-dark: #232a4e;
+            --cr-gold: #FFE66D;
+            --cr-red: #8d1d2a;
+            --text-light: #ffffff;
+            --cr-dark-bg: #1a1e34;
+            --cr-bright-blue: #323d6a;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--cr-dark-bg);
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+
+        .page-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.discordapp.com/attachments/1407934911133777952/1448305000152563804/image.png') no-repeat center center;
+            background-size: cover;
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .navbar {
+            background-color: var(--cr-blue-dark);
+            border-bottom: 5px solid var(--cr-gold);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-logo {
+            font-size: 30px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+        }
+
+        .nav-logo span {
+            color: var(--cr-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            text-transform: uppercase;
+            margin-right: auto;
+            margin-left: 50px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 700;
+            font-size: 18px;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--cr-gold);
+            border-bottom: 2px solid var(--cr-gold);
+        }
+
+        .navbar-icon {
+            max-width: 120px;
+            height: auto;
+            position: relative;
+            top: -10px;
+        }
+
+        .content-wrapper {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 20px 20px 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card-grid-container {
+            max-width: 1400px;
+            width: 100%;
+            background-color: rgba(35, 42, 78, 0.9);
+            border-radius: 10px;
+            border: 8px solid var(--cr-bright-blue);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+            padding: 40px 20px 60px 20px;
+        }
+
+        .card-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 50px;
+            font-weight: 900;
+            color: var(--cr-gold);
+            text-transform: uppercase;
+            margin-top: 50px;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--cr-gold);
+            display: inline-block;
+        }
+
+        .page-subheading {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 50px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0;
+        }
+
+        .evo-card {
+            background-color: var(--cr-blue-dark);
+            border: 3px solid var(--cr-gold);
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            position: relative;
+            text-align: left;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-height: 380px;
+        }
+
+        .evo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 230, 109, 0.3);
+        }
+
+        .card-image-wrapper {
+            background-color: var(--cr-bright-blue);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .card-image-placeholder {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--cr-gold);
+        }
+
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin: 0 0 5px 0;
+        }
+
+        .card-ability {
+            font-size: 14px;
+            line-height: 1.4;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .card-cycle-badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background-color: var(--cr-gold);
+            color: var(--cr-blue-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        .card-elixir-cost {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--cr-red);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-background"></div>
+
+    <nav class="navbar">
+        <div class="nav-logo">CLASH ROYALE <span>EVOS GUIDE</span></div>
+        <div class="nav-links">
+            <a href="puclic/MainHub.html">HOME</a>
+            <a href="MeetTheEvos.html">EVO CARDS</a>
+            <a href="guide.html">GUIDE</a>
+            <a href="https://clashroyale.com/" target="_blank">OFFICIAL WEB</a>
+            <a href="references.html">REFERENCES</a>
+        </div>
+        <img src="https://cdn.discordapp.com/attachments/1407934911133777952/1448311458021507144/bPIB8S2gAAAABJRU5ErkJggg.png"
+            alt="CR Skeleton Icon" class="navbar-icon">
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="card-grid-container">
+            <h2 class="card-heading">MEET THE EVOS</h2>
+            <p class="page-subheading">A detailed look at every evolved card's unique ability and cycle requirements.
+            </p>
+            <div class="card-grid" id="card-grid">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cardData = [
+            { name: "Evolved Knight", elixirCost: 3, cycles: 2, ability: "The Evolved Knight gains an accelerating shield, providing temporary high damage resistance while he moves.", imagePlaceholder: "Evolved Knight Image" },
+            { name: "Evolved Skeletons", elixirCost: 1, cycles: 1, ability: "Spawn three larger Skeletons that gain permanent shields upon every successful attack.", imagePlaceholder: "Evolved Skeletons Image" },
+            { name: "Evolved Firecracker", elixirCost: 3, cycles: 3, ability: "Fires a powerful projectile that leaves behind smaller, area-damage sparks on hit.", imagePlaceholder: "Evolved Firecracker Image" },
+            { name: "Evolved Royal Giant", elixirCost: 6, cycles: 2, ability: "Gains increased health and throws a powerful boulder on the first attack, knocking back enemies.", imagePlaceholder: "Evolved Royal Giant Image" },
+            { name: "Evolved Archers", elixirCost: 3, cycles: 2, ability: "Ability description goes here.", imagePlaceholder: "Evolved Archers Image" },
+            { name: "Evolved Ice Spirit", elixirCost: 1, cycles: 1, ability: "Ability description goes here.", imagePlaceholder: "Evolved Ice Spirit Image" },
+            { name: "Evolved Mortar", elixirCost: 4, cycles: 2, ability: "Ability description goes here.", imagePlaceholder: "Evolved Mortar Image" },
+            { name: "Evolved Zap", elixirCost: 2, cycles: 2, ability: "Ability description goes here.", imagePlaceholder: "Evolved Zap Image" },
+            { name: "Evolved Valkyrie", elixirCost: 4, cycles: 2, ability: "Ability description goes here.", imagePlaceholder: "Evolved Valkyrie Image" },
+            { name: "Evolved Goblins", elixirCost: 2, cycles: 1, ability: "Ability description goes here.", imagePlaceholder: "Evolved Goblins Image" },
+            { name: "Evolved Royal Recruits", elixirCost: 7, cycles: 3, ability: "Ability description goes here.", imagePlaceholder: "Evolved Royal Recruits Image" },
+            { name: "Evolved Barbarians", elixirCost: 5, cycles: 2, ability: "Ability description goes here.", imagePlaceholder: "Evolved Barbarians Image" }
+        ];
+
+        function renderEvoCards() {
+            const gridContainer = document.getElementById('card-grid');
+            if (!gridContainer) return;
+            gridContainer.innerHTML = cardData.map(card => `
+                <div class="evo-card">
+                    <div class="card-cycle-badge">${card.cycles} CYCLES</div>
+                    <div class="card-image-wrapper"><span class="card-image-placeholder">${card.imagePlaceholder}</span></div>
+                    <h3 class="card-title">${card.name}</h3>
+                    <p class="card-ability">${card.ability}</p>
+                    <p class="card-elixir-cost">Elixir Cost: ${card.elixirCost}</p>
+                </div>
+            `).join('');
+        }
+        document.addEventListener('DOMContentLoaded', renderEvoCards);
+    </script>
+</body>
+
+</html>

@@ -2,88 +2,305 @@
 <html>
 
 <head>
-    <title>CUETO_Wayne Emmanuel S. 2nd Quarter</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+    <title>Clash Royale Evolutions Guide</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
     <style>
+        :root {
+            --cr-blue-dark: #232a4e;
+            --cr-blue: #323d6a;
+            --cr-gold: #FFE66D;
+            --cr-red: #8d1d2a;
+            --text-light: #ffffff;
+            --cr-dark-bg: #1a1e34;
+            --cr-bright-blue: #323d6a;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Rajdhani', sans-serif;
-            background: url('https://the-post-assets.sgp1.digitaloceanspaces.com/2022/06/CAMPUS-1-JUNE-25.png') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--cr-dark-bg);
+            color: var(--text-light);
         }
 
-        .overlay {
-            background: rgba(0, 0, 0, 0.85);
+        .page-background {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 100px;
+            background: url('https://cdn.discordapp.com/attachments/1407934911133777952/1448305000152563804/image.png?ex=693ac6a4&is=69397524&hm=e851351b118e9e8306130b41a78fb5d36e8a0ad66e1bbc8bf63267160c4e1f71&') no-repeat center center;
+            background-size: cover;
+            opacity: 0.15;
+            z-index: -1;
         }
 
-        .menu {
+        .navbar {
+            background-color: var(--cr-blue-dark);
+            border-bottom: 5px solid var(--cr-gold);
+            padding: 15px 30px;
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-logo {
+            font-size: 30px;
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 2px;
+            color: var(--text-light);
         }
 
-        .menu h1 {
-            color: #ff4655;
-            font-size: 60px;
-            margin-bottom: 40px;
+        .nav-logo span {
+            color: var(--cr-gold);
         }
 
-        .menu a {
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            text-transform: uppercase;
+            margin-right: auto;
+            margin-left: 50px;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            color: white;
-            font-size: 28px;
-            font-weight: bold;
-            margin: 15px 0;
-            transition: color 0.3s, transform 0.3s;
+            color: var(--text-light);
+            font-weight: 700;
+            font-size: 18px;
+            padding: 5px 0;
+            transition: color 0.3s, border-bottom 0.3s;
         }
 
-        .menu a:hover {
-            color: #ff4655;
-            transform: translateX(10px);
+        .nav-links a:hover {
+            color: var(--cr-gold);
+            border-bottom: 2px solid var(--cr-gold);
         }
 
-        .logo {
+        .navbar-icon {
+            max-width: 120px;
+            height: auto;
+            position: relative;
+            top: -10px;
+        }
+
+        .content-wrapper {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 20px 50px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
+            text-align: center;
         }
 
-        .logo img {
-            width: 250px;
-            opacity: 0.9;
+        .hero-section {
+            background-color: rgba(35, 42, 78, 0.9);
+            padding: 120px 100px 80px 100px;
+            margin-top: 30px;
+            border-radius: 10px;
+            border: 8px solid var(--cr-bright-blue);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+            max-width: 1400px;
+            width: 100%;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            cursor: default;
+        }
+
+        .hero-section .main-heading,
+        .hero-section .sub-heading {
+            text-align: center;
+        }
+
+        .main-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 80px;
+            color: var(--cr-gold);
+            margin-bottom: 25px;
+            text-shadow: none;
+            text-transform: uppercase;
+        }
+
+        .sub-heading {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--cr-red);
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 60px;
+            letter-spacing: 1px;
+        }
+
+        .intro-text {
+            max-width: 1100px;
+            margin: 0 auto;
+            margin-bottom: 80px;
+
+        }
+
+        .intro-text p {
+            font-size: 24px;
+            line-height: 1.8;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+
+
+        .card-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 50px;
+            font-weight: 900;
+            color: var(--cr-gold);
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--cr-gold);
+            display: inline-block;
+        }
+
+        .card-grid-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 30px;
+            background-color: rgba(35, 42, 78, 0.85);
+            border-radius: 15px;
+            border: 5px solid var(--cr-bright-blue);
+        }
+
+        .card-placeholder {
+            background-color: var(--cr-blue-dark);
+            border: 3px solid var(--cr-gold);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 20px;
+            transition: transform 0.2s;
+            text-align: center;
+        }
+
+        .card-placeholder:hover {
+            transform: translateY(-5px);
+        }
+
+
+
+        @media (max-width: 1500px) {
+            .hero-section {
+                max-width: 95%;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .hero-section {
+                padding: 80px 60px;
+            }
+
+            .main-heading {
+                font-size: 60px;
+            }
+
+            .card-heading {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links {
+                margin: 10px 0 0 0;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .navbar-icon {
+                display: none;
+            }
+
+            .hero-section {
+                padding: 50px 30px;
+                border: 4px solid var(--cr-bright-blue);
+            }
+
+            .main-heading {
+                font-size: 45px;
+            }
+
+            .sub-heading {
+                font-size: 20px;
+            }
+
+            .card-grid {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="overlay">
-        <div class="menu">
-            <h1>WAYNE’S WORK</h1>
-            <a href="public/2Q1GRubidiumCueto.html">FIRST EXERCISE [First Graded Exercise]</a>
-            <a href="public/Q21NGRubidiumCueto.html">SECOND EXERCISE [First Non-Graded Exercise]</a>
-            <a href="./public/2Q2GRubidiumCueto.html">THIRD EXERCISE [Second Graded Exercise]</a>
+    <div class="page-background"></div>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            CLASH ROYALE <span>EVOS GUIDE</span>
         </div>
-        <div class="logo">
-            <img src="https://wp.logos-download.com/wp-content/uploads/2021/01/Valorant_Logo.png" alt="Valorant Logo">
-            <img src="https://store-images.s-microsoft.com/image/apps.21507.13663857844271189.4c1de202-3961-4c40-a0aa-7f4f1388775a.20ed7782-0eda-4f9d-b421-4cc47492edc6"
-                alt="Valorant Agents">
+
+        <div class="nav-links">
+            <a href="public/MainHub.html">HOME</a>
+            <a href="MeetTheEvos.html">EVO CARDS</a> <a href="./public/guide.html">GUIDE</a>
+            <a href="https://clashroyale.com/" target="_blank">OFFICIAL WEB</a>
+            <a href="./public/references.html">REFERENCES</a>
+        </div>
+
+        <img src="https://cdn.discordapp.com/attachments/1407934911133777952/1448311458021507144/bPIB8S2gAAAABJRU5ErkJggg.png?ex=693b7567&is=693a23e7&hm=6a179838a91f34d8ca42eae64bb4ad73f9f91aafabafa7d79aca0d0b1883935a&"
+            alt="CR Skeleton Icon" class="navbar-icon">
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="hero-section">
+            <h1 class="main-heading">WELCOME TO CLASH ROYALE</h1>
+            <p class="sub-heading">An Overview of All 38 Card Evolutions</p>
+
+            <div class="intro-text">
+                <p>A BEGINNER'S GUIDE TO CLASH ROYALE: AN OVERVIEW OF ALL 38 CARD EVOLUTIONS WILL SERVE AS YOUR STARTING
+                    POINT IN UNDERSTANDING ONE OF THE COOLEST AND MOST EXCITING FEATURES IN CLASH ROYALE, THAT BEING THE
+                    MANY CARD EVOLUTIONS CURRENTLY AVAILABLE IN THE GAME. THIS WEBSITE WILL BREAK DOWN EACH OF THE 38
+                    EVOLVED CARDS IN A VERY SIMPLE AND ORGANIZED WAY. THIS WILL HELP PLAYERS LEARN WHAT MAKES EVERY CARD
+                    EVOLUTION UNIQUE, AND HOW THEY CAN BE USED EFFECTIVELY IN AN ACTUAL BATTLE.</p>
+                <p>THIS GUIDE WILL ALSO GIVE BASIC TIPS AND ADVANCED STRATEGIES. THIS WILL GREATLY HELP PLAYERS OF ANY
+                    LEVEL TO EASILY LEARN HOW TO CREATE STRONGER DECKS THAT WILL SUPPORT THE EVOLUTION CARDS OF THEIR
+                    CHOICE AND IMPROVE THEIR GAMEPLAY TO GAIN AN ADVANTAGE IN BATTLES. OUR WEBSITE WILL PRETTY MUCH BE
+                    YOUR GO-TO GUIDE FOR MASTERING EVERY EVOLUTION CARD IN THE GAME.</p>
+            </div>
         </div>
     </div>
 </body>
 
-</html>  
+</html>
