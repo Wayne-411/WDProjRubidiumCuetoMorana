@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>References | CR Evolutions Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --cr-blue-dark: #232a4e;
+            --cr-gold: #FFE66D;
+            --cr-red: #8d1d2a;
+            --text-light: #ffffff;
+            --cr-dark-bg: #1a1e34;
+            --cr-bright-blue: #323d6a;
+            --cr-purple: #9b59b6;
+            --cr-dark-purple: #7f4593;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--cr-dark-bg);
+            color: var(--text-light);
+            min-height: calc(100vh - 80px);
+        }
+
+        .page-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.discordapp.com/attachments/1407934911133777952/1448305000152563804/image.png') no-repeat center center;
+            background-size: cover;
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .navbar {
+            background-color: var(--cr-blue-dark);
+            border-bottom: 5px solid var(--cr-gold);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            height: 80px;
+        }
+
+        .nav-logo {
+            font-size: 30px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+        }
+
+        .nav-logo span {
+            color: var(--cr-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            text-transform: uppercase;
+            margin-right: auto;
+            margin-left: 50px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 700;
+            font-size: 18px;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--cr-gold);
+            border-bottom: 2px solid var(--cr-gold);
+        }
+
+        .navbar-icon {
+            max-width: 120px;
+            height: auto;
+            position: relative;
+            top: -10px;
+        }
+
+        .content-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: calc(100vh - 90px);
+            justify-content: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .references-container {
+            width: 100%;
+            background-color: rgba(35, 42, 78, 0.95);
+            border-radius: 10px;
+            border: 8px solid var(--cr-bright-blue);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+            padding: 40px 60px;
+            text-align: left;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 36px;
+            color: var(--cr-gold);
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--cr-gold);
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .reference-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .reference-list li {
+            background-color: var(--cr-blue-dark);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--cr-purple);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .reference-list li:hover {
+            transform: translateY(-3px);
+            border-left-color: var(--cr-gold);
+        }
+
+        .reference-list p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .reference-list a {
+            color: var(--cr-gold);
+            text-decoration: none;
+            font-weight: 700;
+            display: block;
+            font-size: 18px;
+        }
+
+        .reference-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-background"></div>
+
+    <nav class="navbar">
+        <div class="nav-logo">CLASH ROYALE <span>EVOS GUIDE</span></div>
+        <div class="nav-links">
+            <a href="MainHub.html">HOME</a>
+            <a href="MeetTheEvos.html">EVO CARDS</a>
+            <a href="guide.html">GUIDE</a>
+            <a href="https://clashroyale.com/" target="_blank">OFFICIAL WEB</a>
+            <a href="references.html">REFERENCES</a>
+        </div>
+        <img src="https://cdn.discordapp.com/attachments/1407934911133777952/1448311458021507144/bPIB8S2gAAAABJRU5ErkJggg.png"
+            alt="CR Skeleton Icon" class="navbar-icon">
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="references-container">
+            <h2>📚 References & Sources</h2>
+            <ul class="reference-list">
+                <li>
+                    <a href="https://clashroyale.com/blog/release-notes/" target="_blank">Clash Royale Official Release
+                        Notes</a>
+                    <p>Primary source for official card statistics, evolution abilities, and balance changes.</p>
+                </li>
+                <li>
+                    <a href="https://clashroyale.fandom.com/wiki/Clash_Royale_Wiki" target="_blank">Clash Royale
+                        Wiki</a>
+                    <p>Detailed information and statistics for all cards, including non-evolved forms and historical
+                        data.</p>
+                </li>
+                <li>
+                    <a href="https://royaleapi.com/" target="_blank">RoyaleAPI</a>
+                    <p>Data and statistical analysis used for competitive deck building and cycle information.</p>
+                </li>
+                <li>
+                    <p>Custom assets created for this guide, including placeholders for card art and background
+                        textures.</p>
+                </li>
+                <li>
+                    <p>CSS styling derived from a dark, gaming-centric aesthetic.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

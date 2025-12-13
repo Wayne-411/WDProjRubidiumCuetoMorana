@@ -134,6 +134,11 @@
             padding: 0;
         }
 
+        .evo-card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
         .evo-card {
             background-color: var(--cr-blue-dark);
             border: 3px solid var(--cr-gold);
@@ -144,6 +149,8 @@
             text-align: left;
             transition: transform 0.2s, box-shadow 0.2s;
             min-height: 380px;
+            display: flex;
+            flex-direction: column;
         }
 
         .evo-card:hover {
@@ -182,6 +189,8 @@
             line-height: 1.4;
             color: #ccc;
             margin-bottom: 15px;
+            flex-grow: 1;
+            /* Allows ability text to take up available space */
         }
 
         .card-cycle-badge {
@@ -214,9 +223,9 @@
     <nav class="navbar">
         <div class="nav-logo">CLASH ROYALE <span>EVOS GUIDE</span></div>
         <div class="nav-links">
-            <a href="puclic/MainHub.html">HOME</a>
+            <a href="MainHub.html">HOME</a>
             <a href="MeetTheEvos.html">EVO CARDS</a>
-            <a href="guide.html">GUIDE</a>
+            <a href="ClashGuide.html">GUIDE</a>
             <a href="https://clashroyale.com/" target="_blank">OFFICIAL WEB</a>
             <a href="references.html">REFERENCES</a>
         </div>
@@ -253,15 +262,24 @@
         function renderEvoCards() {
             const gridContainer = document.getElementById('card-grid');
             if (!gridContainer) return;
-            gridContainer.innerHTML = cardData.map(card => `
-                <div class="evo-card">
-                    <div class="card-cycle-badge">${card.cycles} CYCLES</div>
-                    <div class="card-image-wrapper"><span class="card-image-placeholder">${card.imagePlaceholder}</span></div>
-                    <h3 class="card-title">${card.name}</h3>
-                    <p class="card-ability">${card.ability}</p>
-                    <p class="card-elixir-cost">Elixir Cost: ${card.elixirCost}</p>
-                </div>
-            `).join('');
+
+            gridContainer.innerHTML = cardData.map((card, index) => {
+                // Determine the file name based on the index (1-based)
+                const fileNumber = index + 1;
+                const filename = `EvoCard${fileNumber}.html`;
+
+                return ` 
+                    <a href="${filename}" class="evo-card-link">
+                        <div class="evo-card">
+                            <div class="card-cycle-badge">${card.cycles} CYCLES</div>
+                            <div class="card-image-wrapper"><span class="card-image-placeholder">${card.imagePlaceholder}</span></div>
+                            <h3 class="card-title">${card.name}</h3>
+                            <p class="card-ability">${card.ability}</p>
+                            <p class="card-elixir-cost">Elixir Cost: ${card.elixirCost}</p>
+                        </div>
+                    </a>
+                `;
+            }).join('');
         }
         document.addEventListener('DOMContentLoaded', renderEvoCards);
     </script>
