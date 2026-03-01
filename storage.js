@@ -1,0 +1,1 @@
+localStorage.setItem("lastVisitedPage", window.location.href);
