@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-<link rel="icon" type="image/jpg" href="favicon12(1).jpg">
 
 <head>
     <title>Meet the Evos | CR Evolutions Guide</title>
+    <link rel="icon" type="image/jpg" href="favicon12(1).jpg">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:wght@700&display=swap"
         rel="stylesheet">
     <style>
@@ -170,10 +171,11 @@
             overflow: hidden;
         }
 
-        .card-image-placeholder {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--cr-gold);
+        .card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .card-title {
@@ -191,7 +193,6 @@
             color: #ccc;
             margin-bottom: 15px;
             flex-grow: 1;
-            /* Allows ability text to take up available space */
         }
 
         .card-cycle-badge {
@@ -239,25 +240,24 @@
             <h2 class="card-heading">MEET THE EVOS</h2>
             <p class="page-subheading">A detailed look at every evolved card's unique ability and cycle requirements.
             </p>
-            <div class="card-grid" id="card-grid">
-            </div>
+            <div class="card-grid" id="card-grid"></div>
         </div>
     </div>
 
     <script>
         const cardData = [
-            { name: "Evolved Barbarians", elixirCost: 5, cycles: 1, ability: "Barbs temporarily gain 35% faster attack/movement speed every time they attack, lasting for 3 seconds.", imagePlaceholder: "Evolved Barbarians Image" },
-            { name: "Evolved Royal Giant", elixirCost: 6, cycles: 1, ability: "Whenever RG attacks, he creates a 2.5 tile radius shockwave that deals low damage and slight knockback. This does not affect flying troops.", imagePlaceholder: "Evolved Royal Giant Image" },
-            { name: "Evolved Firecracker", elixirCost: 3, cycles: 2, ability: "Firecracker's rockets split into sparks, dealing very low tick damage and lasting 3 seconds. The sparks also slow the movement speed of enemy troops within its radius by 15%.", imagePlaceholder: "Evolved Firecracker Image" },
-            { name: "Evolved Skeletons", elixirCost: 1, cycles: 2, ability: "Every time a Skelly attacks, another one spawns nearby. This cloning ability is limited to 8 Skellies maximum.", imagePlaceholder: "Evolved Skeletons Image" },
-            { name: "Evolved Mortar", elixirCost: 4, cycles: 2, ability: "A singular Goblin spawns when one of Mortar's boulders connect.", imagePlaceholder: "Evolved Mortar Image" },
-            { name: "Evolved Knight", elixirCost: 3, cycles: 2, ability: "As long as Knight is moving/deploying, all damage that he takes is reduced by 50%. He loses this shield once he lands a hit.", imagePlaceholder: "Evolved Knight Image" },
-            { name: "Evolved Royal Recruits", elixirCost: 7, cycles: 1, ability: "The Recruits are able to charge when their shields are knocked off, heavily increasing their movement speed and damage.", imagePlaceholder: "Evolved Royal Recruits Image" },
-            { name: "Evolved Bats", elixirCost: 2, cycles: 2, ability: "Each of the Bats are able to heal at a rate of 2 pulses per second. The healing can go slightly beyond their maximum health bar, allowing them to double their max health.", imagePlaceholder: "Evolved BatS Image" },
-            { name: "Evolved Archers", elixirCost: 3, cycles: 2, ability: "Both Archers can deal 50% bonus damage to an enemy troop if they are far away, as well as gaining increased range.", imagePlaceholder: "Evolved Archers Image" },
-            { name: "Evolved Ice Spirit", elixirCost: 1, cycles: 2, ability: "Once the Ice Spirit has frozen an enemy troop, after a few seconds, the area around that troop is frozen again.", imagePlaceholder: "Evolved Ice Spirit Image" },
-            { name: "Evolved Valkyrie", elixirCost: 4, cycles: 2, ability: "Valkyrie summons a tornado upon attacking, pulling in all troops within a 5.5 tile radius towards her. The tornado lasts for a short period of time but also deals slight damage to all enemy troops in its radius.", imagePlaceholder: "Evolved Valkyrie Image" },
-            { name: "Evolved Bomber", elixirCost: 2, cycles: 2, ability: "The bomb that the Bomber throws bounces twice after it lands the first time. The bomb is unable to hit the same troop more than one time.", imagePlaceholder: "Evolved Bomber Image" }
+            { name: "Evolved Barbarians", elixirCost: 5, cycles: 1, ability: "Barbs temporarily gain 35% faster attack/movement speed every time they attack, lasting for 3 seconds.", image: "https://static0.dualshockersimages.com/wordpress/wp-content/uploads/2023/06/barbarians-evolved.jpg" },
+            { name: "Evolved Royal Giant", elixirCost: 6, cycles: 1, ability: "Whenever RG attacks, he creates a 2.5 tile radius shockwave that deals low damage and slight knockback.", image: "https://gamingonphone.com/wp-content/uploads/2023/06/Clash-Royale-Royal-Giant-Evolution-Challenge.jpg" },
+            { name: "Evolved Firecracker", elixirCost: 3, cycles: 2, ability: "Firecracker's rockets split into sparks, dealing very low tick damage and slowing movement by 15%.", image: "https://gamingonphone.com/wp-content/uploads/2023/06/FyGU_z3XsAASZEo.jpg" },
+            { name: "Evolved Skeletons", elixirCost: 1, cycles: 2, ability: "Every time a Skelly attacks, another one spawns nearby. Limited to 8 Skellies maximum.", image: "https://static0.dualshockersimages.com/wordpress/wp-content/uploads/2023/07/skeletons-evolution.jpg?w=1200&h=628&fit=crop" },
+            { name: "Evolved Mortar", elixirCost: 4, cycles: 2, ability: "A singular Goblin spawns when one of Mortar's boulders connect.", image: "https://pbs.twimg.com/media/FzyeWNuWIAEHkOl.jpg" },
+            { name: "Evolved Knight", elixirCost: 3, cycles: 2, ability: "As long as Knight is moving/deploying, all damage that he takes is reduced by 50%.", image: "https://gamingonphone.com/wp-content/uploads/2023/08/clash-royale-knightly-armor-challenge.jpg" },
+            { name: "Evolved Royal Recruits", elixirCost: 7, cycles: 1, ability: "The Recruits are able to charge when their shields are knocked off, heavily increasing speed.", image: "https://cdna.artstation.com/p/assets/images/images/067/587/616/large/mykhail-klymenko-ocellus-services-04.jpg?1695733120" },
+            { name: "Evolved Bats", elixirCost: 2, cycles: 2, ability: "Each of the Bats are able to heal at a rate of 2 pulses per second.", image: "https://preview.redd.it/evolved-bats-are-the-greatest-and-most-balanced-evolution-v0-enbebje3l5bd1.jpeg?auto=webp&s=d508e1a14d08871261a28dac9d934ccec3a46847" },
+            { name: "Evolved Archers", elixirCost: 3, cycles: 2, ability: "Both Archers can deal 50% bonus damage to an enemy troop if they are far away.", image: "https://gamingonphone.com/wp-content/uploads/2025/04/Clash-Royale-Archers-Evolution.jpg" },
+            { name: "Evolved Ice Spirit", elixirCost: 1, cycles: 2, ability: "Once frozen, after a few seconds, the area around that troop is frozen again.", image: "https://prod.assets.earlygamecdn.com/images/IceSpiritEvo.jpg?mtime=1701348956" },
+            { name: "Evolved Valkyrie", elixirCost: 4, cycles: 2, ability: "Valkyrie summons a tornado upon attacking, pulling in all troops within 5.5 tiles.", image: "https://gamingonphone.com/wp-content/uploads/2025/03/Clash-Royale-Valkyrie-Evolution-decks.jpg" },
+            { name: "Evolved Bomber", elixirCost: 2, cycles: 2, ability: "The bomb bounces twice after it lands. The bomb cannot hit the same troop twice.", image: "https://cdnb.artstation.com/p/assets/images/images/073/433/119/large/mooncolony-key-art-template-artstation-bomberevo.jpg?1709650354" }
         ];
 
         function renderEvoCards() {
@@ -265,15 +265,16 @@
             if (!gridContainer) return;
 
             gridContainer.innerHTML = cardData.map((card, index) => {
-                // Determine the file name based on the index (1-based)
                 const fileNumber = index + 1;
                 const filename = `EvoCard${fileNumber}.html`;
 
                 return ` 
                     <a href="${filename}" class="evo-card-link">
                         <div class="evo-card">
-                            <div class="card-cycle-badge">${card.cycles} CYCLES</div>
-                            <div class="card-image-wrapper"><span class="card-image-placeholder">${card.imagePlaceholder}</span></div>
+                            <div class="card-cycle-badge">${card.cycles} ${card.cycles === 1 ? 'CYCLE' : 'CYCLES'}</div>
+                            <div class="card-image-wrapper">
+                                <img src="${card.image}" alt="${card.name}">
+                            </div>
                             <h3 class="card-title">${card.name}</h3>
                             <p class="card-ability">${card.ability}</p>
                             <p class="card-elixir-cost">Elixir Cost: ${card.elixirCost}</p>
