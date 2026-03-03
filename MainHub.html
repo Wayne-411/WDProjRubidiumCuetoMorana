@@ -303,20 +303,6 @@
         </div>
     </div>
 
-    <script>
-        const lastPage = localStorage.getItem("lastVisitedPage");
-
-        const currentPage = window.location.pathname.split("/").pop();
-
-        if (lastPage) {
-            const savedPage = lastPage.split("/").pop();
-
-            if (savedPage && savedPage !== currentPage) {
-                window.location.href = lastPage;
-            }
-        }
-    </script>
-
     <script src="storage.js"></script>
 
 </body>
