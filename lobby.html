@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash Royale Evolutions Guide</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --cr-blue-dark: #232a4e;
+            --cr-blue-bright: #3a4eb3;
+            --cr-gold: #FFE66D;
+            --cr-pink-evo: #ff00ff;
+            --text-light: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-light);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://cdn.discordapp.com/attachments/1407934911133777952/1482366583975448729/image.png?ex=69b6b0f6&is=69b55f76&hm=38fca5f94245a8406fe5ab76b25fd17fb09584ea193a1895e409790de3478b72&');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            z-index: -1;
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            width: 95%;
+            max-width: 1300px;
+        }
+
+        .hero-card {
+            background: rgba(35, 42, 78, 0.95);
+            border: 6px solid var(--cr-blue-bright);
+            border-radius: 40px;
+            padding: 60px 80px;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.9);
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .loading-status {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--cr-gold);
+            font-size: 16px;
+            letter-spacing: 6px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            height: 20px;
+        }
+
+        .description-loader {
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.6;
+            margin-bottom: 60px;
+            min-height: 300px;
+            color: #ecf0f1;
+            text-align: center;
+        }
+
+        .progress-box {
+            width: 100%;
+            height: 45px;
+            background: #0a0c1a;
+            border-radius: 50px;
+            border: 4px solid var(--cr-blue-bright);
+            padding: 6px;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--cr-pink-evo), var(--cr-gold));
+            border-radius: 50px;
+            box-shadow: 0 0 25px var(--cr-pink-evo);
+            transition: width 0.05s linear;
+        }
+
+        .percentage {
+            position: absolute;
+            right: 15px;
+            top: -40px;
+            font-family: 'Montserrat';
+            color: var(--cr-gold);
+            font-weight: 900;
+            font-size: 28px;
+        }
+
+        #enter-btn {
+            margin-top: 50px;
+            padding: 25px 80px;
+            background: var(--cr-gold);
+            color: var(--cr-blue-dark);
+            border: none;
+            border-radius: 20px;
+            font-family: 'Montserrat';
+            font-weight: 900;
+            font-size: 26px;
+            text-transform: uppercase;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+        }
+
+        #enter-btn.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        #enter-btn:hover {
+            transform: scale(1.1);
+            background: #fff;
+            box-shadow: 0 0 40px rgba(255, 230, 109, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="loading-container">
+        <div class="hero-card">
+            <div class="loading-status" id="status-text">Initializing...</div>
+
+            <div class="description-loader" id="typed-text"></div>
+
+            <div class="progress-box">
+                <div class="percentage" id="percent-val">0%</div>
+                <div class="progress-fill" id="fill"></div>
+            </div>
+
+            <button id="enter-btn" onclick="location.href='MeetTheEvos.html'">View Evo Cards</button>
+        </div>
+    </div>
+
+    <script>
+        const text = "A BEGINNER'S GUIDE TO CLASH ROYALE: AN OVERVIEW OF ALL 38 CARD EVOLUTIONS WILL SERVE AS YOUR STARTING POINT IN UNDERSTANDING ONE OF THE COOLEST AND MOST EXCITING FEATURES IN CLASH ROYALE, THAT BEING THE MANY CARD EVOLUTIONS CURRENTLY AVAILABLE IN THE GAME. THIS WEBSITE WILL BREAK DOWN EACH OF THE 38 EVOLVED CARDS IN A VERY SIMPLE AND ORGANIZED WAY. THIS WILL HELP PLAYERS LEARN WHAT MAKES EVERY CARD EVOLUTION UNIQUE, AND HOW THEY CAN BE USED EFFECTIVELY IN AN ACTUAL BATTLE.\n\nTHIS GUIDE WILL ALSO GIVE BASIC TIPS AND ADVANCED STRATEGIES. THIS WILL GREATLY HELP PLAYERS OF ANY LEVEL TO EASILY LEARN HOW TO CREATE STRONGER DECKS THAT WILL SUPPORT THE EVOLUTION CARDS OF THEIR CHOICE AND IMPROVE THEIR GAMEPLAY TO GAIN AN ADVANTAGE IN BATTLES. OUR WEBSITE WILL PRETTY MUCH BE YOUR GO-TO GUIDE FOR MASTERING EVERY EVOLUTION CARD IN THE GAME.";
+
+        let i = 0;
+        let progress = 0;
+        const typedContainer = document.getElementById("typed-text");
+        const fill = document.getElementById("fill");
+        const percentVal = document.getElementById("percent-val");
+        const statusText = document.getElementById("status-text");
+        const enterBtn = document.getElementById("enter-btn");
+
+        function typeText() {
+            if (i < text.length) {
+                if (text.charAt(i) === "\n") {
+                    typedContainer.innerHTML += "<br>";
+                } else {
+                    typedContainer.innerHTML += text.charAt(i);
+                }
+                i++;
+                setTimeout(typeText, 5);
+            }
+        }
+
+        function updateProgress() {
+            if (progress < 100) {
+                progress += 0.8;
+                fill.style.width = progress + "%";
+                percentVal.innerHTML = Math.floor(progress) + "%";
+
+                if (progress > 10 && progress < 35) statusText.innerText = "A project by Andy Morana";
+                if (progress > 35 && progress < 65) statusText.innerText = "A project by Wayne Cueto";
+                if (progress > 65 && progress < 90) statusText.innerText = "Optimizing Strategies...";
+                if (progress > 90) statusText.innerText = "Ready for Battle...";
+
+                setTimeout(updateProgress, 30);
+            } else {
+                percentVal.innerHTML = "100%";
+                statusText.innerText = "Evolution Cards are now open for you to see!";
+                statusText.style.color = "#FFE66D";
+                enterBtn.classList.add("show");
+            }
+        }
+
+        window.onload = () => {
+            typeText();
+            updateProgress();
+        };
+    </script>
+</body>
+
+</html>
