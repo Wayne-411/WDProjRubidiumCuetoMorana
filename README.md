@@ -18,16 +18,17 @@
 ### FINAL MODIFICATION PROPOSAL:
 
 #### How a full CRUD (Create, Read, Update and Delete) process will be implemented on the saved data in the localStorage:
-##### CRUD will primarily be utilized in the new form webpage that shall be added, which will make the localStorage no longer just auto redirect the user to the last opened page like beforehand, but instead send them to a page that lets them choose whether to return to a certain page or not. Upon opening a new webpage/s (other than MainHub.html/index.html) and exiting the website, the CRUD process will create a list of the most recently opened pages (with a limit of storing 3 pages) that the user can choose to go back to. This option list will be seen once the user returns to the website and is redirected to the form page. The user is also able to manually delete the selectable options on the list aside from the ignore button (which will simply send them back to the homepage if the user does not want to do anything with the last opened pages list), where the CRUD process will allow the user input to be read, making sure that the website will update and delete accordingly.
+##### CRUD will primarily be utilized in the new form webpage that shall be added, which will make the localStorage no longer just auto redirect the user to the last opened page like beforehand, but instead send them to a page that lets them choose whether to return to a certain page or not. Upon opening a new webpage/s (other than MainHub.html/index.html) and exiting the website, the CRUD process will create a list of the most recently opened pages (with a limit of storing 3 pages) that the user can choose to go back to. This option list will be seen once the user returns to the website and is redirected to the form page. The user is also able to manually delete the selectable options on the list aside from the ignore button (which will simply send them back to the homepage if the user does not want to do anything with the last opened pages list), where the CRUD process will allow the user input to be read, making sure that the website will update and delete stored data accordingly and effectively.
 
 #### Updated wireframes of how the CRUD process will work (involves a new webpage):
+(Insert wireframes for the new form page and how the CRUD process will work here)
 
 
-#### Other changes that will be made to the website for further improvement:
+#### Other modifications that will be made to the website for further improvement:
 ##### Playable videos will be included in multiple webpages for a more interactive experience
 ##### More images will be added to make the overall visuals and aesthetics much better
 ##### Refinement of the website's designs and expansion of the already existing content
-##### The addition of animations and transitions to the webpages
+##### The introduction of animations and transitions to the webpages (if there is time)
 
 ******
 
