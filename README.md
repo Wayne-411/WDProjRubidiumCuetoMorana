@@ -21,7 +21,7 @@
 ##### CRUD will primarily be utilized in the new form webpage that shall be added, which will make the localStorage no longer just auto redirect the user to the last opened page like beforehand, but instead send them to a page that lets them choose whether to return to a certain page or not. Upon opening a new webpage/s (other than MainHub.html/index.html) and exiting the website, the CRUD process will CREATE and display (READ) a list of the most recently opened pages (with a limit of storing 3 pages) that the user can choose to go back to. This option list will be seen once the user returns to the website and is redirected to the form page. There will also be a home button that simply send the user back to the homepage if they do not want to return to a certain page. If the user opens another page that will exceed the storage limit of the form, the system will UPDATE and DELETE the stored data accordingly.
 
 #### Updated wireframes of how the CRUD process will work (involves a new webpage):
-![New Form Page With CRUD Process]([https://github.com/Wayne-411/WDProjRubidiumCuetoMorana/blob/main/public/Screenshot%202026-03-20%20194217.png] "New Form Page With CRUD Process")
+![New Form Page With CRUD Process](https://github.com/Wayne-411/WDProjRubidiumCuetoMorana/blob/main/public/Screenshot%202026-03-20%20194217.png "New Form Page With CRUD Process")
 
 
 #### Other modifications that will be made to the website for further improvement:
