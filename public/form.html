@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clash Royale Evos Guide</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --cr-blue-dark: #232a4e;
+            --cr-blue-content: #0055d4;
+            --cr-blue-border: #1a1e34;
+            --cr-gold: #ffb100;
+            --cr-gold-light: #ffe66d;
+            --text-white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0a0e27;
+            color: var(--text-white);
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: var(--cr-blue-dark);
+            border-bottom: 5px solid var(--cr-gold);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .nav-logo {
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        .nav-logo span {
+            color: var(--cr-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            padding-bottom: 5px;
+        }
+
+        .active {
+            border-bottom: 3px solid var(--cr-gold);
+        }
+
+        .main-wrapper {
+            margin-top: 50px;
+            width: 900px;
+            background-color: var(--cr-blue-border);
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .blue-box {
+            background-color: var(--cr-blue-content);
+            padding: 60px 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--cr-gold-light);
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        .flex-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .instruction {
+            width: 150px;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .btn-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 420px;
+        }
+
+        .btn {
+            background-color: #000;
+            color: var(--cr-gold-light);
+            padding: 18px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .home-btn {
+            background-color: var(--cr-gold-light);
+            color: #000;
+            margin-top: 15px;
+        }
+
+        .footer-crud {
+            width: 900px;
+            margin-top: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 14px;
+        }
+
+        .footer-crud p {
+            margin: 5px 0;
+        }
+
+        .label {
+            color: var(--cr-gold);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">CLASH ROYALE <span>EVOS GUIDE</span></div>
+        <div class="nav-links">
+            <a href="MainHub.html">HOME</a>
+            <a href="MeetTheEvos.html">EVO CARDS</a>
+            <a href="form.html" class="active">GUIDE</a>
+            <a href="https://clashroyale.com/">OFFICIAL WEB</a>
+            <a href="references.html">REFERENCES</a>
+        </div>
+    </nav>
+
+    <div class="main-wrapper">
+        <div class="blue-box">
+            <h2>Would you like to return to:</h2>
+
+            <div class="flex-row">
+                <div class="instruction" style="text-align: right;">
+                    These 3 hyperlinks will return the user to the particular webpage indicated
+                </div>
+
+                <div class="btn-stack" id="recent-pages">
+                </div>
+
+                <div class="instruction" style="text-align: left;">
+                    This option will return the user to the home page of the website
+                </div>
+            </div>
+
+            <a href="MainHub.html" class="btn home-btn" style="display: block; width: 420px; margin: 20px auto 0;">Back
+                to Home Page</a>
+        </div>
+    </div>
+
+    <div class="footer-crud">
+        <p><span class="label">CREATE</span> - Makes a list of recently opened pages (with a limit of 3)</p>
+        <p><span class="label">READ</span> - Processes and displays the list of recently opened pages on the form page
+        </p>
+        <p><span class="label">UPDATE</span> - The list adds a new option to account for when a new page is opened
+            (except the home page)</p>
+        <p><span class="label">DELETE</span> - The oldest stored page link will be removed when the storage limit of 3
+            is exceeded (a new page is opened)</p>
+    </div>
+
+    <script>
+        const KEY = 'cr_nav_history';
+
+        function loadHistory() {
+            const list = document.getElementById('recent-pages');
+            const data = JSON.parse(localStorage.getItem(KEY) || '[]');
+
+            if (data.length === 0) {
+                list.innerHTML = '<div class="btn">No History</div>';
+                return;
+            }
+
+            list.innerHTML = data.map(page => `
+                <a href="${page.url}" class="btn">${page.name}</a>
+            `).join('');
+        }
+
+        loadHistory();
+    </script>
+</body>
+
+</html>
