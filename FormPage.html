@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="icon" type="image/jpg" href="favicon12(1).jpg">
+
+<head>
+    <title>Beginner's Guide | CR Evolutions Guide</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --cr-blue-dark: #232a4e;
+            --cr-gold: #FFE66D;
+            --cr-red: #8d1d2a;
+            --text-light: #ffffff;
+            --cr-dark-bg: #1a1e34;
+            --cr-bright-blue: #323d6a;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--cr-dark-bg);
+            color: var(--text-light);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .page-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background: url("https://cdn.discordapp.com/attachments/1407934911133777952/1482366583975448729/image.png") center/cover no-repeat;
+
+            filter: brightness(0.35) blur(2px);
+            opacity: 0.9;
+
+            z-index: -2;
+        }
+
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(26, 30, 52, 0.7), rgba(26, 30, 52, 0.9));
+            z-index: -1;
+        }
+
+        .navbar {
+            background-color: var(--cr-blue-dark);
+            border-bottom: 5px solid var(--cr-gold);
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .nav-logo {
+            font-size: 30px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+        }
+
+        .nav-logo span {
+            color: var(--cr-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            text-transform: uppercase;
+            margin-left: 50px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 700;
+            font-size: 17px;
+            transition: 0.3s;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--cr-gold);
+            border-bottom: 2px solid var(--cr-gold);
+        }
+
+        .navbar-icon {
+            max-width: 120px;
+            margin-left: auto;
+        }
+
+        .content-wrapper {
+            max-width: 1400px;
+            margin: auto;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* MAIN */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+        }
+
+        .outer-box {
+            background: rgba(35, 42, 78, 0.95);
+            border: 6px solid #3b4a8f;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.7);
+        }
+
+        .inner-box {
+            background: #1552a3;
+            border-radius: 10px;
+            padding: 50px 80px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ffb84d;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        /* LINK LIST */
+        .link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 25px; /* prevents overlap */
+        }
+
+        .item {
+            background: black;
+            color: #ffb84d;
+            padding: 14px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            width: 320px;
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+        }
+
+        .home-btn {
+            background: #f4b75e;
+            color: black;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page-background"></div>
+<div class="background-overlay"></div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="nav-logo">CLASH ROYALE <span>EVOS GUIDE</span></div>
+
+    <div class="nav-links">
+        <a href="MainHub.html">HOME</a>
+        <a href="EvoCard1.html">EVO CARDS</a>
+        <a href="ClashGuide.html" class="active">GUIDE</a>
+        <a href="#">OFFICIAL WEB</a>
+        <a href="references.html">REFERENCES</a>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+    <div class="outer-box">
+        <div class="inner-box">
+
+            <h2>Would you like to return to:</h2>
+
+            <!-- DYNAMIC RECENT LINKS -->
+            <div id="output" class="link-list"></div>
+
+            <!-- STATIC HOME BUTTON -->
+            <a href="MainHub.html" class="item home-btn">Back to Home Page</a>
+
+        </div>
+    </div>
+</div>
+
+<!-- JS FOR DISPLAY -->
+<script src="localStorage_app.js"></script>
+
+</body>
+</html>
