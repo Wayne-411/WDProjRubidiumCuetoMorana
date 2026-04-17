@@ -1,52 +1,23 @@
 const output = document.getElementById("output");
 
-function saveData() {
-  const key = document.getElementById("key").value;
-  const value = document.getElementById("value").value;
+function loadHistory() {
+    const history = JSON.parse(localStorage.getItem("pageHistory")) || [];
 
-  if (!key) {
-    show("Enter a key first.");
-    return;
-  }
+    output.innerHTML = "";
 
-  localStorage.setItem(key, value);
-  show(`Saved: ${key} = ${value}`);
+    if (history.length === 0) {
+        output.innerHTML = "<p>No recently visited pages.</p>";
+        return;
+    }
+
+    history.forEach(page => {
+        const link = document.createElement("a");
+        link.href = page.url;
+        link.textContent = page.title;
+        link.className = "item";
+
+        output.appendChild(link);
+    });
 }
 
-function loadData() {
-  const key = document.getElementById("key").value;
-
-  if (!key) {
-    show("Enter a key first.");
-    return;
-  }
-
-  const value = localStorage.getItem(key);
-
-  if (value !== null) {
-    show(`Loaded: ${value}`);
-  } else {
-    show("Key not found.");
-  }
-}
-
-function removeData() {
-  const key = document.getElementById("key").value;
-
-  if (!key) {
-    show("Enter a key first.");
-    return;
-  }
-
-  localStorage.removeItem(key);
-  show(`Removed key: ${key}`);
-}
-
-function clearAll() {
-  localStorage.clear();
-  show("All localStorage cleared.");
-}
-
-function show(message) {
-  output.textContent = message;
-}
+window.onload = loadHistory;
