@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<link rel="icon" type="image/jpg" href="https://github.com/Wayne-411/WDProjRubidiumCuetoMorana/blob/main/public/favicon12(1).jpg">
+<link rel="icon" type="image/jpg"
+    href="https://github.com/Wayne-411/WDProjRubidiumCuetoMorana/blob/main/public/favicon12(1).jpg">
 
 <head>
     <title>Evolved Barbarians Details | CR Evolutions Guide</title>
@@ -95,15 +96,13 @@
         .content-wrapper {
             max-width: 1500px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             min-height: calc(100vh - 90px);
             justify-content: center;
-            padding-top: 20px;
-            padding-bottom: 20px;
         }
 
         .detail-header {
@@ -179,27 +178,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: pointer;
             position: relative;
-        }
-
-        .play-button {
-            width: 50px;
-            height: 50px;
-            background: var(--text-light);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .play-triangle {
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 15px solid var(--cr-dark-purple);
-            margin-left: 3px;
+            overflow: hidden;
+            /* Added to round video corners */
         }
 
         .stat-list {
@@ -263,7 +244,6 @@
     </nav>
 
     <div class="content-wrapper">
-
         <div class="detail-header">
             <img src="https://static0.dualshockersimages.com/wordpress/wp-content/uploads/2023/06/barbarians-evolved.jpg"
                 alt="Evolved Barbarians Header" class="detail-image">
@@ -274,15 +254,17 @@
 
                 <div class="detail-card">
                     <div class="detail-card-header">
-                        <img src="https://static0.dualshockersimages.com/wordpress/wp-content/uploads/2023/06/barbarians-evolved.jpg" alt="Card Icon"
-                            class="detail-card-icon">
+                        <img src="https://static0.dualshockersimages.com/wordpress/wp-content/uploads/2023/06/barbarians-evolved.jpg"
+                            alt="Card Icon" class="detail-card-icon">
                         Evolved Barbarians
                     </div>
                     <div class="detail-card-content">
                         <div class="video-player-box">
-                            <div class="play-button">
-                                <div class="play-triangle"></div>
-                            </div>
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/doLb9l5RshQ"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
                         </div>
                         <p class="ability-text">**Evolution Ability:** Barbs temporarily gain 35% faster attack/movement
                             speed every time they attack, lasting for 3 seconds.</p>
@@ -291,15 +273,15 @@
 
                 <div class="detail-card">
                     <div class="detail-card-header">
-                        <img src="https://static0.dualshockersimages.com/wordpress/wp-content/uploads/2023/06/barbarians-evolved.jpg" alt="Card Icon"
-                            class="detail-card-icon">
+                        <img src="https://static0.dualshockersimages.com/wordpress/wp-content/uploads/2023/06/barbarians-evolved.jpg"
+                            alt="Card Icon" class="detail-card-icon">
                         Evolved Barbarians
                     </div>
                     <div class="detail-card-content">
                         <ul class="stat-list">
                             <li>Elixir Cost: 5</li>
-                            <li>Cycles: 2</li>
-                            <li>HP: Medium</li>
+                            <li>Cycles: 1</li>
+                            <li>HP: High</li>
                             <li>DPS: Very High</li>
                             <li>Movement Speed: Slow</li>
                         </ul>
@@ -308,14 +290,15 @@
 
                 <div class="detail-card">
                     <div class="detail-card-header">
-                        <img src="https://static0.dualshockersimages.com/wordpress/wp-content/uploads/2023/06/barbarians-evolved.jpg" alt="Card Icon"
-                            class="detail-card-icon">
+                        <img src="https://static0.dualshockersimages.com/wordpress/wp-content/uploads/2023/06/barbarians-evolved.jpg"
+                            alt="Card Icon" class="detail-card-icon">
                         Evolved Barbarians
                     </div>
                     <div class="detail-card-content">
                         <div class="info-box">
                             <h4>INFO</h4>
-                            <p>They are amazing on defense, but can also put some offensive pressure, though they are vulnerable to splash damage troops.</p>
+                            <p>They are amazing on defense, but can also put some offensive pressure, though they are
+                                vulnerable to splash damage troops.</p>
                         </div>
                     </div>
                 </div>
@@ -325,7 +308,6 @@
     </div>
 
     <script src="storage.js"></script>
-
 </body>
 
 </html>
