@@ -179,27 +179,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: pointer;
             position: relative;
-        }
-
-        .play-button {
-            width: 50px;
-            height: 50px;
-            background: var(--text-light);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .play-triangle {
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 15px solid var(--cr-dark-purple);
-            margin-left: 3px;
+            overflow: hidden;
         }
 
         .stat-list {
@@ -280,13 +261,16 @@
                     </div>
                     <div class="detail-card-content">
                         <div class="video-player-box">
-                            <div class="play-button">
-                                <div class="play-triangle"></div>
-                            </div>
+                            <iframe 
+                                width="100%" 
+                                height="100%" 
+                                src="https://www.youtube.com/embed/XfBKzOQm3yM" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
-                        <p class="ability-text">**Evolution Ability:** Each of the Bats are able to heal at a rate of 2
-                            pulses per second. The healing can go slightly beyond their maximum health bar, allowing
-                            them to double their max health.</p>
+                        <p class="ability-text">**Evolution Ability:** Bats heal while attacking. They can overheal up to 300% of their base health (from 122 to 244 HP).</p>
                     </div>
                 </div>
 
@@ -296,37 +280,3 @@
                             class="detail-card-icon">
                         Evolved Bats
                     </div>
-                    <div class="detail-card-content">
-                        <ul class="stat-list">
-                            <li>Elixir Cost: 2</li>
-                            <li>Cycles: 2</li>
-                            <li>HP: Very Low</li>
-                            <li>DPS: Medium</li>
-                            <li>Movement Speed: Fast</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="detail-card">
-                    <div class="detail-card-header">
-                        <img src="https://preview.redd.it/evolved-bats-are-the-greatest-and-most-balanced-evolution-v0-enbebje3l5bd1.jpeg?auto=webp&s=d508e1a14d08871261a28dac9d934ccec3a46847" alt="Card Icon"
-                            class="detail-card-icon">
-                        Evolved Bats
-                    </div>
-                    <div class="detail-card-content">
-                        <div class="info-box">
-                            <h4>INFO</h4>
-                            <p>Their healing allows them to survive much longer, allowing them to get more value.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <script src="storage.js"></script>
-
-</body>
-
-</html>
