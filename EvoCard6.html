@@ -179,27 +179,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: pointer;
             position: relative;
-        }
-
-        .play-button {
-            width: 50px;
-            height: 50px;
-            background: var(--text-light);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .play-triangle {
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 15px solid var(--cr-dark-purple);
-            margin-left: 3px;
+            overflow: hidden;
         }
 
         .stat-list {
@@ -250,15 +231,15 @@
     <div class="page-background"></div>
 
     <nav class="navbar">
-        <div class="nav-logo">CLASH ROYALE </a>
-            <div class="nav-links">
-                <a href="MainHub.html">HOME</a>
-                <a href="MeetTheEvos.html">EVO CARDS</a>
-                <a href="ClashGuide.html">GUIDE</a>
-                <a href="https://clashroyale.com/" target="_blank">OFFICIAL WEB</a>
-                <a href="references.html">REFERENCES</a>
-            </div>
-            <img src="https://github.com/Wayne-411/WDProjRubidiumCuetoMorana/blob/main/public/favicon12(1).jpg"
+        <div class="nav-logo">CLASH ROYALE <span>EVOS GUIDE</span></div>
+        <div class="nav-links">
+            <a href="MainHub.html">HOME</a>
+            <a href="MeetTheEvos.html">EVO CARDS</a>
+            <a href="ClashGuide.html">GUIDE</a>
+            <a href="https://clashroyale.com/" target="_blank">OFFICIAL WEB</a>
+            <a href="references.html">REFERENCES</a>
+        </div>
+        <img src="https://github.com/Wayne-411/WDProjRubidiumCuetoMorana/blob/main/public/favicon12(1).jpg"
             class="navbar-icon">
     </nav>
 
@@ -280,12 +261,16 @@
                     </div>
                     <div class="detail-card-content">
                         <div class="video-player-box">
-                            <div class="play-button">
-                                <div class="play-triangle"></div>
-                            </div>
+                            <iframe 
+                                width="100%" 
+                                height="100%" 
+                                src="https://www.youtube.com/embed/J4z3JdZbUHc" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
-                        <p class="ability-text">**Evolution Ability:** As long as Knight is moving/deploying, all damage
-                            that he takes is reduced by 50%. He loses this shield once he lands a hit.</p>
+                        <p class="ability-text">**Evolution Ability:** Gains 80% damage reduction while moving or deploying. Once he starts attacking, he takes full damage.</p>
                     </div>
                 </div>
 
@@ -299,9 +284,9 @@
                         <ul class="stat-list">
                             <li>Elixir Cost: 3</li>
                             <li>Cycles: 2</li>
-                            <li>HP: High</li>
-                            <li>DPS: Medium</li>
-                            <li>Movement Speed: Medium</li>
+                            <li>HP: +30% Increase</li>
+                            <li>Damage: +10% Increase</li>
+                            <li>Hitspeed: +0.3s Faster</li>
                         </ul>
                     </div>
                 </div>
@@ -315,7 +300,7 @@
                     <div class="detail-card-content">
                         <div class="info-box">
                             <h4>INFO</h4>
-                            <p>He is really good at tanking when moving, but will not last very long once his shield goes down.</p>
+                            <p>Boasts a massive 45% DPS increase over the base card. Exceptionally strong against Sparky and ranged units due to his movement-based shield.</p>
                         </div>
                     </div>
                 </div>
