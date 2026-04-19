@@ -179,27 +179,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: pointer;
             position: relative;
-        }
-
-        .play-button {
-            width: 50px;
-            height: 50px;
-            background: var(--text-light);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .play-triangle {
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 15px solid var(--cr-dark-purple);
-            margin-left: 3px;
+            overflow: hidden;
         }
 
         .stat-list {
@@ -280,12 +261,16 @@
                     </div>
                     <div class="detail-card-content">
                         <div class="video-player-box">
-                            <div class="play-button">
-                                <div class="play-triangle"></div>
-                            </div>
+                            <iframe 
+                                width="100%" 
+                                height="100%" 
+                                src="https://www.youtube.com/embed/OhDpYLUyZbk" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
-                        <p class="ability-text">**Evolution Ability:** Both Archers can deal 50% bonus damage to an
-                            enemy troop if they are far away, as well as gaining increased range.</p>
+                        <p class="ability-text">**Evolution Ability:** Archers deal double damage (Power Shot) and gain increased range when attacking targets further than 5 tiles away.</p>
                     </div>
                 </div>
 
@@ -299,9 +284,9 @@
                         <ul class="stat-list">
                             <li>Elixir Cost: 3</li>
                             <li>Cycles: 2</li>
-                            <li>HP: Low</li>
-                            <li>DPS: High</li>
-                            <li>Movement Speed: Medium</li>
+                            <li>HP: survives Arrows</li>
+                            <li>Range: 6.5 Tiles</li>
+                            <li>Speed: Medium</li>
                         </ul>
                     </div>
                 </div>
@@ -315,7 +300,7 @@
                     <div class="detail-card-content">
                         <div class="info-box">
                             <h4>INFO</h4>
-                            <p>They are much better at dealing damage now, excelling ib both defense and offense so long as they are able to remain far away.</p>
+                            <p>They excel in both defense and offense. Use Tornado or Log to keep enemies away, ensuring the Power Shot stays active.</p>
                         </div>
                     </div>
                 </div>
