@@ -179,27 +179,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .play-button {
-            width: 50px;
-            height: 50px;
-            background: var(--text-light);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .play-triangle {
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 15px solid var(--cr-dark-purple);
-            margin-left: 3px;
+            overflow: hidden;
         }
 
         .stat-list {
@@ -280,13 +260,9 @@
                     </div>
                     <div class="detail-card-content">
                         <div class="video-player-box">
-                            <div class="play-button">
-                                <div class="play-triangle"></div>
-                            </div>
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/djSex--dXjw" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <p class="ability-text">**Evolution Ability:** The bomb that the Bomber throws bounces twice
-                            after it lands the first time. The bomb is unable to hit the same troop more than one time.
-                        </p>
+                        <p class="ability-text">**Evolution Ability:** The bomb bounces twice after the initial impact, extending its range significantly. It cannot damage the same unit multiple times per throw.</p>
                     </div>
                 </div>
 
@@ -299,9 +275,9 @@
                     <div class="detail-card-content">
                         <ul class="stat-list">
                             <li>Elixir Cost: 2</li>
-                            <li>Cycles: 2</li>
+                            <li>Cycles: 1</li>
                             <li>HP: Low</li>
-                            <li>DPS: Medium</li>
+                            <li>Bounces: 2 Extra</li>
                             <li>Movement Speed: Medium</li>
                         </ul>
                     </div>
@@ -316,7 +292,7 @@
                     <div class="detail-card-content">
                         <div class="info-box">
                             <h4>INFO</h4>
-                            <p>His bombs are able to snipe enemy towers from the bridge for free damage, while also further increasing his crowd control capabilities.</p>
+                            <p>Excellent for chip damage at the bridge. The bounces allow it to hit the Princess Tower by targeting troops placed in front of it.</p>
                         </div>
                     </div>
                 </div>
