@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<link rel="icon" type="image/jpg" href="https://github.com/Wayne-411/WDProjRubidiumCuetoMorana/blob/main/public/favicon12(1).jpg">
+<link rel="icon" type="image/jpg"
+    href="https://github.com/Wayne-411/WDProjRubidiumCuetoMorana/blob/main/public/favicon12(1).jpg">
 
 <head>
     <title>Evolved Mortar Details | CR Evolutions Guide</title>
@@ -179,27 +180,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: pointer;
             position: relative;
-        }
-
-        .play-button {
-            width: 50px;
-            height: 50px;
-            background: var(--text-light);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .play-triangle {
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 15px solid var(--cr-dark-purple);
-            margin-left: 3px;
+            overflow: hidden;
         }
 
         .stat-list {
@@ -265,8 +247,7 @@
     <div class="content-wrapper">
 
         <div class="detail-header">
-            <img src="https://pbs.twimg.com/media/FzyeWNuWIAEHkOl.jpg" alt="Evolved Mortar Header"
-                class="detail-image">
+            <img src="https://pbs.twimg.com/media/FzyeWNuWIAEHkOl.jpg" alt="Evolved Mortar Header" class="detail-image">
         </div>
 
         <div class="detail-container">
@@ -280,12 +261,15 @@
                     </div>
                     <div class="detail-card-content">
                         <div class="video-player-box">
-                            <div class="play-button">
-                                <div class="play-triangle"></div>
-                            </div>
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wtl386l4nyA"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
                         </div>
-                        <p class="ability-text">**Evolution Ability:** A singular Goblin spawns when one of Mortar's
-                            boulders connect.</p>
+                        <p class="ability-text">**Evolution Ability:** Shoots a boulder that spawns a singular Goblin
+                            wherever it connects. Additionally, it features a 25% faster attack speed (from 4s to 3s).
+                        </p>
                     </div>
                 </div>
 
@@ -299,9 +283,9 @@
                         <ul class="stat-list">
                             <li>Elixir Cost: 4</li>
                             <li>Cycles: 2</li>
-                            <li>HP: High</li>
-                            <li>DPS: Low</li>
-                            <li>Movement Speed: N/A</li>
+                            <li>HP: ~20% Increase (+300 HP)</li>
+                            <li>Hitspeed: 3.0 Seconds</li>
+                            <li>Target: Ground (Building)</li>
                         </ul>
                     </div>
                 </div>
@@ -315,7 +299,8 @@
                     <div class="detail-card-content">
                         <div class="info-box">
                             <h4>INFO</h4>
-                            <p>Deals much more damage to enemy towers now due to the Goblin that spawns.</p>
+                            <p>Pairs exceptionally well with Miner or Barbarian Barrel to tank for the Goblins spawned
+                                by the boulders, creating a relentless "graveyard-like" pressure on towers.</p>
                         </div>
                     </div>
                 </div>
